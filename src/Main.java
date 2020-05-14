@@ -1,4 +1,5 @@
 import srpfacadelab.IGameEngine;
+import srpfacadelab.PlayerFacade;
 import srpfacadelab.RpgPlayer;
 import srpfacadelab.SimpleGameEngine;
 
@@ -8,13 +9,15 @@ public class Main {
         //This is meant to be simple and just show how you could instantiate the structure
 
         IGameEngine game = new SimpleGameEngine();
-        RpgPlayer player1 = new RpgPlayer(game);
-        RpgPlayer player2 = new RpgPlayer(game);
+        RpgPlayer player1 = new RpgPlayer();
+        RpgPlayer player2 = new RpgPlayer();
         ((SimpleGameEngine) game).addPlayer(player1);
         ((SimpleGameEngine) game).addPlayer(player2);
+        PlayerFacade player1Facade = new PlayerFacade(game, player1);
+        PlayerFacade player2Facade = new PlayerFacade(game, player2);
 
         //Here you would create items
-
+        
         //Here you would tell the history and make the game happen
 
         //You could make players pick up items
